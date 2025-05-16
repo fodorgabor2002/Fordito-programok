@@ -116,4 +116,14 @@ public interface PolynomCalculatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSzamFct(PolynomCalculatorParser.SzamFctContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#szamVagySzamValtozo}.
+	 * @param ctx the parse tree
+	 */
+	void enterSzamVagySzamValtozo(PolynomCalculatorParser.SzamVagySzamValtozoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#szamVagySzamValtozo}.
+	 * @param ctx the parse tree
+	 */
+	void exitSzamVagySzamValtozo(PolynomCalculatorParser.SzamVagySzamValtozoContext ctx);
 }

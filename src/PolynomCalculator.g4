@@ -78,8 +78,8 @@ xtag returns [XTag xtagPeldany]
         $xtagPeldany = new XTag();
         $xtagPeldany.xSzoveg = "";
 
-        if ($szamTag.value >= 0d) $xtagPeldany.muvelet = "+";
-        else $xtagPeldany.muvelet = "-";
+        //if ($szamTag.value >= 0d) $xtagPeldany.muvelet = "+";
+        //else $xtagPeldany.muvelet = "-";
         $xtagPeldany.egyutthato = String.valueOf($szamTag.value);
     }
     ;
@@ -97,7 +97,7 @@ szamMulop returns [double value]
     ;
 
 szamFct returns [double value]
-    : NUMBER { $value = Double.parseDouble($NUMBER.text); }
+    : csakSzam = szamVagySzamValtozo { $value = $csakSzam.value; }
     | '(' szamExpr ')' { $value = $szamExpr.value; }
     | 'abs' '(' szamExpr ')' { $value = Math.abs($szamExpr.value); }
     | OPMINMAX '(' fstop=szamExpr { $value = $fstop.value; } (',' nxtop=szamExpr  {
@@ -107,15 +107,17 @@ szamFct returns [double value]
     | OPADD szamFct { $value = "-".equals($OPADD.text) ? -$szamFct.value : $szamFct.value; }
     ;
 
+szamVagySzamValtozo returns [double value]
+    : NUMBER { $value = Double.parseDouble($NUMBER.text); }
+    | VALTOZO { $value = szamValtozok.get($VALTOZO.text); }
+    ;
+
+
+
 
 POLINOM_KULCSSZO: 'polynom' ;
-//VALTOZO : (?![xX])[a-zA-Z] ('_'[0-9]+)? ;
-
 VALTOZO         : [a-wy-zA-WY-Z] ('_' [0-9]+)? ;
-
 SZAM_KULCSSZO   : 'number' ;
-
-//POLINOM         : '<' XTAG (OPADD XTAG)* '>' ;
 
 WS              : [ \t\r]+ -> skip ;
 NL              : [\n]+ -> skip;

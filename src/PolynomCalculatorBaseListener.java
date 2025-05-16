@@ -143,6 +143,18 @@ public class PolynomCalculatorBaseListener implements PolynomCalculatorListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSzamFct(PolynomCalculatorParser.SzamFctContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSzamVagySzamValtozo(PolynomCalculatorParser.SzamVagySzamValtozoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSzamVagySzamValtozo(PolynomCalculatorParser.SzamVagySzamValtozoContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
