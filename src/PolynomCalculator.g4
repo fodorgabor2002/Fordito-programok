@@ -24,6 +24,16 @@ line
     : polinomDeklaracio
     | szamValtozoDeklaracio
     | valtozoErtekadas
+    | kiertekeles
+    //| showUtasitas
+    ;
+
+kiertekeles
+    : kiertekelendoPolinom = polinom '[' fuggvenyertek = szamExpr ']' {
+        Polinom polinom = $kiertekelendoPolinom.polinomPeldany;
+        double ertek = polinom.evaluatePolinom($fuggvenyertek.value);
+        System.out.println("ertek:" + ertek);
+    }
     ;
 
 valtozoErtekadas
@@ -50,37 +60,21 @@ polinom returns[Polinom polinomPeldany]
     ;
 
 xtag returns [XTag xtagPeldany]
-    : OPADD? VALTOZO? 'x' ('^' NUMBER)? {
-        $xtagPeldany = new XTag();
+    : {$xtagPeldany = new XTag();}
+        (prefix = szamExpr {$xtagPeldany.egyutthato = $prefix.value;})?
+        'x' ('^' ints = NUMBER)? {
         $xtagPeldany.xSzoveg = "x";
 
-        if ($OPADD != null) $xtagPeldany.muvelet = $OPADD.text;
-        if ($VALTOZO != null) $xtagPeldany.egyutthato = $VALTOZO.text;
-        if ($NUMBER != null) {
-            $xtagPeldany.vanHatvany = true;
-            $xtagPeldany.hatvanyJel = "^";
-            $xtagPeldany.hatvany = Integer.parseInt($NUMBER.text);
-        }
-    }
-    | OPADD? prefix = NUMBER? 'x' ('^' ints = NUMBER)? {
-        $xtagPeldany = new XTag();
-        $xtagPeldany.xSzoveg = "x";
-
-        if ($OPADD != null) $xtagPeldany.muvelet = $OPADD.text;
-        if ($prefix != null) $xtagPeldany.egyutthato = $prefix.text;
         if ($ints != null) {
             $xtagPeldany.vanHatvany = true;
             $xtagPeldany.hatvanyJel = "^";
             $xtagPeldany.hatvany = Integer.parseInt($ints.text);
         }
     }
-    | szamTag = szamExpr {
-        $xtagPeldany = new XTag();
+    | {$xtagPeldany = new XTag();}
+        szamTag = szamExpr {
         $xtagPeldany.xSzoveg = "";
-
-        //if ($szamTag.value >= 0d) $xtagPeldany.muvelet = "+";
-        //else $xtagPeldany.muvelet = "-";
-        $xtagPeldany.egyutthato = String.valueOf($szamTag.value);
+        $xtagPeldany.egyutthato = $szamTag.value;
     }
     ;
 

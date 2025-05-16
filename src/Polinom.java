@@ -29,6 +29,26 @@ public class Polinom {
         return head;
     }
 
+    public double evaluatePolinom(double x) {
+        double result = 0.0;
+        XTag current = head;
+
+        while (current != null) {
+            double termValue;
+            if (current.xSzoveg != null && !current.xSzoveg.isEmpty()) {
+                int exponent = current.vanHatvany ? current.hatvany : 1;
+                termValue = current.egyutthato * Math.pow(x, exponent);
+            } else {
+                termValue = current.egyutthato; // constant term
+            }
+
+            result += termValue;
+            current = current.next;
+        }
+
+        return result;
+    }
+
     // Convert the polynomial to a string
     @Override
     public String toString() {

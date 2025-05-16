@@ -40,6 +40,18 @@ public class PolynomCalculatorBaseListener implements PolynomCalculatorListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterKiertekeles(PolynomCalculatorParser.KiertekelesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitKiertekeles(PolynomCalculatorParser.KiertekelesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterValtozoErtekadas(PolynomCalculatorParser.ValtozoErtekadasContext ctx) { }
 	/**
 	 * {@inheritDoc}
