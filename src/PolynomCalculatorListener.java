@@ -1,4 +1,7 @@
 // Generated from java-escape by ANTLR 4.11.1
+
+import java.util.*;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -56,6 +59,56 @@ public interface PolynomCalculatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitKiertekelendoSzam(PolynomCalculatorParser.KiertekelendoSzamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#polinomExpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterPolinomExpr(PolynomCalculatorParser.PolinomExprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#polinomExpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitPolinomExpr(PolynomCalculatorParser.PolinomExprContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#polinomAddop}.
+	 * @param ctx the parse tree
+	 */
+	void enterPolinomAddop(PolynomCalculatorParser.PolinomAddopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#polinomAddop}.
+	 * @param ctx the parse tree
+	 */
+	void exitPolinomAddop(PolynomCalculatorParser.PolinomAddopContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#polinomMulop}.
+	 * @param ctx the parse tree
+	 */
+	void enterPolinomMulop(PolynomCalculatorParser.PolinomMulopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#polinomMulop}.
+	 * @param ctx the parse tree
+	 */
+	void exitPolinomMulop(PolynomCalculatorParser.PolinomMulopContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#polinomFct}.
+	 * @param ctx the parse tree
+	 */
+	void enterPolinomFct(PolynomCalculatorParser.PolinomFctContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#polinomFct}.
+	 * @param ctx the parse tree
+	 */
+	void exitPolinomFct(PolynomCalculatorParser.PolinomFctContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#polinomVagypolinomValtozo}.
+	 * @param ctx the parse tree
+	 */
+	void enterPolinomVagypolinomValtozo(PolynomCalculatorParser.PolinomVagypolinomValtozoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#polinomVagypolinomValtozo}.
+	 * @param ctx the parse tree
+	 */
+	void exitPolinomVagypolinomValtozo(PolynomCalculatorParser.PolinomVagypolinomValtozoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PolynomCalculatorParser#valtozoErtekadas}.
 	 * @param ctx the parse tree

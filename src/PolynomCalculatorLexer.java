@@ -1,4 +1,7 @@
 // Generated from java-escape by ANTLR 4.11.1
+
+import java.util.*;
+
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -87,13 +90,13 @@ public class PolynomCalculatorLexer extends Lexer {
 	}
 
 
-	    java.util.Map<String, Polinom> polinomok = new java.util.HashMap<>();
-	    public void setPolinomok(java.util.Map<String, Polinom> polinomok) {
+	    Map<String, Polinom> polinomok = new HashMap<>();
+	    public void setPolinomok(Map<String, Polinom> polinomok) {
 	        this.polinomok = polinomok;
 	    }
 
-	    java.util.Map<String, Double> szamValtozok = new java.util.HashMap<>();
-	    public void setSzamValtozok(java.util.Map<String, Double> szamValtozok) {
+	    Map<String, Double> szamValtozok = new HashMap<>();
+	    public void setSzamValtozok(Map<String, Double> szamValtozok) {
 	        this.szamValtozok = szamValtozok;
 	    }
 
@@ -147,8 +150,8 @@ public class PolynomCalculatorLexer extends Lexer {
 		"\u0007\u0004\t\u0005\u000b\u0006\r\u0007\u000f\b\u0011\t\u0013\n\u0015"+
 		"\u000b\u0017\f\u0019\r\u001b\u000e\u001d\u000f\u001f\u0010!\u0011#\u0012"+
 		"%\u0013\'\u0014)\u0015+\u0016\u0001\u0000\u0006\u0004\u0000AWYZawyz\u0001"+
-		"\u000009\u0003\u0000\t\t\r\r  \u0001\u0000\n\n\u0002\u0000++--\u0002\u0000"+
-		"**//\u0092\u0000\u0001\u0001\u0000\u0000\u0000\u0000\u0003\u0001\u0000"+
+		"\u000009\u0003\u0000\t\t\r\r  \u0001\u0000\n\n\u0002\u0000++--\u0003\u0000"+
+		"%%**//\u0092\u0000\u0001\u0001\u0000\u0000\u0000\u0000\u0003\u0001\u0000"+
 		"\u0000\u0000\u0000\u0005\u0001\u0000\u0000\u0000\u0000\u0007\u0001\u0000"+
 		"\u0000\u0000\u0000\t\u0001\u0000\u0000\u0000\u0000\u000b\u0001\u0000\u0000"+
 		"\u0000\u0000\r\u0001\u0000\u0000\u0000\u0000\u000f\u0001\u0000\u0000\u0000"+

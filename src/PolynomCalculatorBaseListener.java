@@ -1,5 +1,8 @@
 // Generated from java-escape by ANTLR 4.11.1
 
+import java.util.*;
+
+
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -71,6 +74,66 @@ public class PolynomCalculatorBaseListener implements PolynomCalculatorListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitKiertekelendoSzam(PolynomCalculatorParser.KiertekelendoSzamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPolinomExpr(PolynomCalculatorParser.PolinomExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPolinomExpr(PolynomCalculatorParser.PolinomExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPolinomAddop(PolynomCalculatorParser.PolinomAddopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPolinomAddop(PolynomCalculatorParser.PolinomAddopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPolinomMulop(PolynomCalculatorParser.PolinomMulopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPolinomMulop(PolynomCalculatorParser.PolinomMulopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPolinomFct(PolynomCalculatorParser.PolinomFctContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPolinomFct(PolynomCalculatorParser.PolinomFctContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPolinomVagypolinomValtozo(PolynomCalculatorParser.PolinomVagypolinomValtozoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPolinomVagypolinomValtozo(PolynomCalculatorParser.PolinomVagypolinomValtozoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
