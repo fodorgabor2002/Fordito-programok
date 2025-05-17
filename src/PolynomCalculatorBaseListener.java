@@ -40,6 +40,18 @@ public class PolynomCalculatorBaseListener implements PolynomCalculatorListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterShowUtasitas(PolynomCalculatorParser.ShowUtasitasContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitShowUtasitas(PolynomCalculatorParser.ShowUtasitasContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterKiertekeles(PolynomCalculatorParser.KiertekelesContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -47,6 +59,18 @@ public class PolynomCalculatorBaseListener implements PolynomCalculatorListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitKiertekeles(PolynomCalculatorParser.KiertekelesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterKiertekelendoSzam(PolynomCalculatorParser.KiertekelendoSzamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitKiertekelendoSzam(PolynomCalculatorParser.KiertekelendoSzamContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

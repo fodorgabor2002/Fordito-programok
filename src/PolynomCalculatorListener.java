@@ -27,6 +27,16 @@ public interface PolynomCalculatorListener extends ParseTreeListener {
 	 */
 	void exitLine(PolynomCalculatorParser.LineContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#showUtasitas}.
+	 * @param ctx the parse tree
+	 */
+	void enterShowUtasitas(PolynomCalculatorParser.ShowUtasitasContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#showUtasitas}.
+	 * @param ctx the parse tree
+	 */
+	void exitShowUtasitas(PolynomCalculatorParser.ShowUtasitasContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PolynomCalculatorParser#kiertekeles}.
 	 * @param ctx the parse tree
 	 */
@@ -36,6 +46,16 @@ public interface PolynomCalculatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitKiertekeles(PolynomCalculatorParser.KiertekelesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#kiertekelendoSzam}.
+	 * @param ctx the parse tree
+	 */
+	void enterKiertekelendoSzam(PolynomCalculatorParser.KiertekelendoSzamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#kiertekelendoSzam}.
+	 * @param ctx the parse tree
+	 */
+	void exitKiertekelendoSzam(PolynomCalculatorParser.KiertekelendoSzamContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PolynomCalculatorParser#valtozoErtekadas}.
 	 * @param ctx the parse tree
