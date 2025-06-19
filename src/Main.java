@@ -24,18 +24,14 @@ show((<x^2 + 2x + 1> / <1x^1 + 1>)[p_1[2]]);
 */
         //show((<5x^3-9x^2>/<2x+2>*<9x-4>)[4]);
         String polinomSzoveg = """
-                polynom a, b, c;
-                a = <x - 1>;
-                b = <x + 1x^0>;
-                c = a / b;
-                show(c);
-                c = a / b + <2>;
-                show(c);
-                c = a / b + <2x + 2>;
-                show(c);
-                c = a / b + <2x + 2>[3];
-                show(c);
-                show(<2x + 2>[3]);
+                polynom p_1, p_2;
+                number a;
+                a = 3 - 2 * 1;
+                p_1 = <x - a>;
+                p_2 = <x+1x^0>;
+                show((p_1 * p_2)[3]);
+                show(p_1 * p_2[2]);
+                show((<x^2 + 2x + 1> / <1x^1 + 1> + <x^3+4> * <13>)[p_1[2]]);
                 
                 """;
         CharStream inputStream = CharStreams.fromString(polinomSzoveg);

@@ -117,10 +117,16 @@ public class Polinom {
             for (XTag b = other.head; b != null; b = b.next) {
                 XTag term = new XTag();
                 term.egyutthato = a.egyutthato * b.egyutthato;
-                term.xSzoveg = a.xSzoveg; // assumes both use same variable
-                term.vanHatvany = true;
                 term.hatvany = a.hatvany + b.hatvany;
-                term.hatvanyJel = "^";
+                if (term.hatvany != 0) {
+                    term.hatvanyJel = "^";
+                    term.vanHatvany = true;
+                    term.xSzoveg = "x";
+                } else {
+                    term.hatvanyJel = "";
+                    term.vanHatvany = false;
+                    term.xSzoveg = "";
+                }
                 temp.addTerm(term);
             }
             result = result.add(temp);

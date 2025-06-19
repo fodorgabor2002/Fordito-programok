@@ -67,6 +67,18 @@ public class PolynomCalculatorBaseListener implements PolynomCalculatorListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterKiertekelesPolinomExprre(PolynomCalculatorParser.KiertekelesPolinomExprreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitKiertekelesPolinomExprre(PolynomCalculatorParser.KiertekelesPolinomExprreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterKiertekelendoSzam(PolynomCalculatorParser.KiertekelendoSzamContext ctx) { }
 	/**
 	 * {@inheritDoc}

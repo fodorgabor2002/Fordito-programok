@@ -31,16 +31,28 @@ line
     ;
 
 showUtasitas
-    : SHOW_KULCSSZO '(' showPolinom = polinomExpr ')' {System.out.println($showPolinom.polinomPeldany.toString());}
-    | SHOW_KULCSSZO '(' VALTOZO ')' {
+    : SHOW_KULCSSZO '(' VALTOZO ')' {
         if (polinomok.containsKey($VALTOZO.text)) System.out.println(polinomok.get($VALTOZO.text).toString());
         else System.out.println(szamValtozok.get($VALTOZO.text));
     }
+    | SHOW_KULCSSZO '(' showPolinom = polinomExpr ')' {System.out.println($showPolinom.polinomPeldany.toString());}
     | SHOW_KULCSSZO '(' showSzamExpr = szamExpr ')' {System.out.println($showSzamExpr.value);}
-    | SHOW_KULCSSZO '(' kiertekeles ')' {System.out.println($kiertekeles.kiertekeltErtek);}
+    | SHOW_KULCSSZO '(' kiertekelesPolinomExprre ')' {System.out.println($kiertekelesPolinomExprre.kiertekeltErtek);}
     ;
 
 kiertekeles returns[double kiertekeltErtek]
+    : kiertekelendoPolinomErtek = polinom fuggvenyertek = kiertekelendoSzam {
+        Polinom polinom = $kiertekelendoPolinomErtek.polinomPeldany;
+        $kiertekeltErtek = polinom.evaluatePolinom($fuggvenyertek.value);
+    }
+    | VALTOZO fuggvenyertek = kiertekelendoSzam {
+        Polinom polinom =  polinomok.get($VALTOZO.text);
+        $kiertekeltErtek = polinom.evaluatePolinom($fuggvenyertek.value);
+    }
+    ;
+
+
+kiertekelesPolinomExprre returns[double kiertekeltErtek]
     : kiertekelendoPolinomErtek = polinomExpr fuggvenyertek = kiertekelendoSzam {
         Polinom polinom = $kiertekelendoPolinomErtek.polinomPeldany;
         $kiertekeltErtek = polinom.evaluatePolinom($fuggvenyertek.value);
@@ -62,12 +74,30 @@ polinomAddop returns [Polinom polinomPeldany]
 
 polinomMulop returns [Polinom polinomPeldany]
     : fstop=polinomFct { $polinomPeldany = $fstop.polinomPeldany; }
+    | exp=szamExpr {
+        XTag xt = new XTag();
+        xt.egyutthato = $exp.value;
+        xt.xSzoveg = "";
+        xt.hatvany = 0;
+        Polinom polinom = new Polinom();
+        polinom.addTerm(xt);
+        $polinomPeldany = polinom;
+    }
     ;
 
 polinomFct returns [Polinom polinomPeldany]
     : csakpolinom = polinomVagypolinomValtozo { $polinomPeldany = $csakpolinom.polinomPeldany; }
     | '(' polinomExpr ')' { $polinomPeldany = $polinomExpr.polinomPeldany; }
-    | OPADD polinomFct { $polinomPeldany = "-".equals($OPADD.text) ? $polinomFct.polinomPeldany.subtract($polinomFct.polinomPeldany.add($polinomFct.polinomPeldany)) : $polinomFct.polinomPeldany; }
+    | ki=kiertekeles {
+        XTag xt = new XTag();
+        xt.egyutthato = $ki.kiertekeltErtek;
+        xt.xSzoveg = "";
+        xt.hatvany = 0;
+        Polinom polinom2 = new Polinom();
+        polinom2.addTerm(xt);
+        $polinomPeldany = polinom2;
+    }
+    //| polinomFct { $polinomPeldany = "-".equals($OPADD.text) ? $polinomFct.polinomPeldany.subtract($polinomFct.polinomPeldany.add($polinomFct.polinomPeldany)) : $polinomFct.polinomPeldany; }
     ;
 
 polinomVagypolinomValtozo returns [Polinom polinomPeldany]
@@ -84,7 +114,17 @@ polinomVagypolinomValtozo returns [Polinom polinomPeldany]
 
 
 valtozoErtekadas
-    : VALTOZO '=' (polinomExpr {polinomok.put($VALTOZO.text, $polinomExpr.polinomPeldany);} | szamExpr {szamValtozok.put($VALTOZO.text, $szamExpr.value);})
+    : VALTOZO '=' szamExpr {szamValtozok.put($VALTOZO.text, $szamExpr.value);}
+    | VALTOZO '=' polinomExpr {polinomok.put($VALTOZO.text, $polinomExpr.polinomPeldany);}
+    | VALTOZO '=' ki=kiertekeles  {
+        XTag xt = new XTag();
+        xt.egyutthato =  $ki.kiertekeltErtek;
+        xt.hatvany = 0;
+        xt.xSzoveg = "";
+        Polinom polinom = new Polinom();
+        polinom.addTerm(xt);
+        {polinomok.put("ertek_polinom", polinom);}
+    }
     ;
 
 polinomDeklaracio

@@ -50,6 +50,16 @@ public interface PolynomCalculatorListener extends ParseTreeListener {
 	 */
 	void exitKiertekeles(PolynomCalculatorParser.KiertekelesContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PolynomCalculatorParser#kiertekelesPolinomExprre}.
+	 * @param ctx the parse tree
+	 */
+	void enterKiertekelesPolinomExprre(PolynomCalculatorParser.KiertekelesPolinomExprreContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PolynomCalculatorParser#kiertekelesPolinomExprre}.
+	 * @param ctx the parse tree
+	 */
+	void exitKiertekelesPolinomExprre(PolynomCalculatorParser.KiertekelesPolinomExprreContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PolynomCalculatorParser#kiertekelendoSzam}.
 	 * @param ctx the parse tree
 	 */
